@@ -8,6 +8,7 @@ node_modules
 
 # Distribution
 dist
+.env
 
 # Optional
 .cache
