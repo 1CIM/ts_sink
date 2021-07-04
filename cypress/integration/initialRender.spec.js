@@ -8,6 +8,7 @@ describe('User can see initial render', () => {
   it('shows page header', () => {
     cy.get('[data-cy=header]').within(() => {
       cy.get('[data-cy=header-text]').should('contain', 'Hi there')
+      cy.get('[data-cy=color]').should('contain', 'red')
     })
   })
 })
