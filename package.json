@@ -17,10 +17,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:silent": "PORT=3000 BROWSER=none react-scripts start",
+    "cy:run": "cypress run",
+    "cy:integrate": "start-server-and-test start:silent http://localhost:3000/ cy:run",
+    "cy:open": "cypress open",
+    "cypress": "start-server-and-test start:silent http://localhost:3000/ cy:open"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^7.6.0",
+    "start-server-and-test": "^1.12.5"
   }
 }
