@@ -20,11 +20,13 @@ export const Child = ({ color, onClick }: ChildProps) => {
 // Here we tell TS its a React component,
 // So we can assign properties to it like 'propTypes' and 'contextTypes'
 // And 'Child' will receive props of type 'ChildProps' as before
+// It automatically expects to be able to receive children as a props while the one above you need to pass it in the interface.
 
-export const ChildAsFC: React.FC<ChildProps> = ({ color, onClick }) => {
+export const ChildAsFC: React.FC<ChildProps> = ({ color, onClick, children }) => {
   return (
     <div data-cy='color_2'>
       {color}
+      {children}
       <button data-cy='second_btn' onClick={onClick}>Click me</button>
     </div>
   );
