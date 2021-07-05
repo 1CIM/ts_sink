@@ -7,9 +7,9 @@ interface ChildProps {
 
 export const Child = ({ color, onClick }: ChildProps) => {
   return (
-    <div data-cy='color_1'>
+    <div data-cy='color-1'>
       {color}
-      <button data-cy='first_btn' onClick={onClick}>Click me</button>
+      <button data-cy='first-btn' onClick={onClick}>Click me</button>
     </div>
   );
 };
@@ -24,10 +24,10 @@ export const Child = ({ color, onClick }: ChildProps) => {
 
 export const ChildAsFC: React.FC<ChildProps> = ({ color, onClick, children }) => {
   return (
-    <div data-cy='color_2'>
+    <div data-cy='color-2'>
       {color}
       {children}
-      <button data-cy='second_btn' onClick={onClick}>Click me</button>
+      <button data-cy='second-btn' onClick={onClick}>Click me</button>
     </div>
   );
 };
