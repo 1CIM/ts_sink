@@ -3,6 +3,7 @@ import Parent from './props/Parent';
 import GuestList from './state/GuestList';
 import UserSearch from './state/UserSearch';
 import EventComponent from './events/EventComponent';
+import RefUserSearch from './refs/UserSearch'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <GuestList />
       <UserSearch />
       <EventComponent />
+      <RefUserSearch />
     </>
   );
 }
