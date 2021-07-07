@@ -54,6 +54,7 @@ describe('User can see initial render', () => {
     cy.get('[data-cy=event-comp]').within(() => {
       cy.get('[data-cy=event-header]').should('contain', 'Event Component')
       cy.get('[data-cy=event-input]').should('be.empty')
+      cy.get('[data-cy=event-drag]').should('contain', 'Drag Me!')
     })
   })
 });
