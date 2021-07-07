@@ -49,4 +49,23 @@ describe('User can see initial render', () => {
       cy.get('[data-cy=found-user]').should('be.empty')
     })
   })
+
+  it('displays event component', () => {
+    cy.get('[data-cy=event-comp]').within(() => {
+      cy.get('[data-cy=event-header]').should('contain', 'Event Component')
+      cy.get('[data-cy=event-input]').should('be.empty')
+      cy.get('[data-cy=event-drag]').should('contain', 'Drag Me!')
+    })
+  })
+
+  it('displays ref search user component', () => {
+    cy.get('[data-cy=ref-search-user-container]').within(() => {
+      cy.get('[data-cy=ref-search-user-header]').should('contain', 'Ref User Search')
+      cy.get('[data-cy=ref-search-input]').should('be.empty')
+      cy.get('[data-cy=ref-found-user]').should('be.empty')
+      cy.get('[data-cy=ref-search-input]').type('Sarah')
+      cy.get('[data-cy=ref-search-btn]').click()
+      cy.get('[data-cy=ref-found-user]').should('contain', 'Sarah20')
+    })
+  })
 });
